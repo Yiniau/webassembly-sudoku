@@ -1,0 +1,31 @@
+{
+  "name": "webassembly-sudoku",
+  "version": "0.1.0",
+  "description": "A simple project about making the sudoku game logic run in WebAssembly, JS is only responsible for interaction",
+  "main": "index.js",
+  "repository": "https://github.com/Yiniau/webassembly-sudoku.git",
+  "author": "yiniau <yiranzhouyida@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack-cli",
+    "build:wasm": "cd sudoku && cargo +nightly build --color=always --release --target=wasm32-unknown-unknown && cp target/wasm32-unknown-unknown/release/sudoku.wasm ../src/wasm",
+    "start:dev": "webpack-dev-server"
+  },
+  "dependencies": {
+    "src": "^1.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4",
+    "webpack-cli": "^2",
+    "webpack-dev-server": "^3.1.1"
+  }
+}
