@@ -14,13 +14,6 @@ extern {
     fn random_int(min: usize, max: usize) -> usize;
 }
 
-mod wasm_mem;
-pub use wasm_mem::*;
-
-use std::os::raw::c_void;
-//use std::os::raw::c_int;
-use std::sync::Mutex;
-
 /// Return a random usize number with given bound
 /// e.g. s = 1, e = 5, return [1,5) usize
 ///
