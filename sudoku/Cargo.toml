@@ -1,0 +1,10 @@
+[package]
+authors = ["yiniau <yiranzhouyida@gmail.com>"]
+name = "sudoku"
+version = "0.1.0"
+[dependencies]
+lazy_static = "*"
+rand = "0.4"
+
+[lib]
+crate-type = ["cdylib"]

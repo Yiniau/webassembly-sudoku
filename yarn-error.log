@@ -1,0 +1,68 @@
+Arguments: 
+  /Users/yiniau/.nvm/versions/node/v9.11.1/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js build:wasm
+
+PATH: 
+  /Users/yiniau/.nvm/versions/node/v9.11.1/bin:/Users/yiniau/.cargo/bin:/Users/yiniau/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  9.11.1
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "webassembly-sudoku",
+    "version": "0.1.0",
+    "description": "A simple project about making the sudoku game logic run in WebAssembly, JS is only responsible for interaction",
+    "main": "index.js",
+    "repository": "https://github.com/Yiniau/webassembly-sudoku.git",
+    "author": "yiniau <yiranzhouyida@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+      "build": "webpack-cli",
+      "build:wasm": "cd sudoku && cargo +nightly build --color=always --release --target=wasm32-unknown-unknown && cp target/wasm32-unknown-unknown/release/sudoku.wasm ../src/wasm",
+      "start:dev": "webpack-dev-server"
+    },
+    "dependencies": {
+      "src": "^1.1.2"
+    },
+    "devDependencies": {
+      "babel-cli": "^6.26.0",
+      "babel-core": "^6.26.0",
+      "babel-loader": "^7.1.4",
+      "babel-plugin-syntax-async-functions": "^6.13.0",
+      "babel-plugin-syntax-dynamic-import": "^6.18.0",
+      "babel-polyfill": "^6.26.0",
+      "babel-preset-env": "^1.6.1",
+      "clean-webpack-plugin": "^0.1.19",
+      "html-webpack-plugin": "^3.2.0",
+      "webpack": "^4",
+      "webpack-cli": "^2",
+      "webpack-dev-server": "^3.1.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Command failed.
+  Exit code: 101
+  Command: sh
+  Arguments: -c cd sudoku && cargo +nightly build --color=always --release --target=wasm32-unknown-unknown && cp target/wasm32-unknown-unknown/release/sudoku.wasm ../src/wasm
+  Directory: /Users/yiniau/github/webassembly-sudoku
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
+      at ChildProcess.emit (events.js:180:13)
+      at maybeClose (internal/child_process.js:936:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
