@@ -81,13 +81,6 @@ function fetchAndInstantiate(url, importObject) {
     // matrix check
     _mod_.check();
 
-    // log matrix
-    // _mod_.data = new Uint8Array(
-    //   _mod_.memory.buffer,
-    //   originPtr,
-    //   81
-    // );
-    // console.log('matrix data: ', _mod_.data);
     let _p = _mod_.instance.exports.get_data();
     let _data = new Uint8Array(_mod_.memory.buffer, _p, 81);
     console.log('matrix data: ', _data);
